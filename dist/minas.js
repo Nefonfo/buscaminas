@@ -23,7 +23,6 @@ class Minas {
             this.mineQuantity = mineQuantity;
         }
         this.generateRandomMap();
-        console.log(this.whereMine);
         this.markFinish = false;
     }
     generateRandomMap() {
@@ -135,6 +134,9 @@ class Minas {
                 ((mine[0] - 1) === y && (mine[1] - 1) === x)) {
                 result++;
             }
+        }
+        if (result == 0) {
+            result = ' ';
         }
         return result.toString();
     }

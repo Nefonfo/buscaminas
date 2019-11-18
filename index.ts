@@ -18,6 +18,10 @@ const bootstrap = async () => {
 }
 
 async function begin(): Promise<boolean> {
+	console.log('INSTRUCCIONES');
+	console.log('1- MAXIMO DE MINAS NO DEBE SOBREPASAR AL MAXIMO DE ESPACIOS - 1');
+	console.log('2- MAXIMO DE ANCHO HORIZONTAL Y VERTICAL 49 (SE RECOMIENDA DE 30 X 3O MAXIMO)');
+	console.log('3- EN CASO DE ERRONEO EN DIMENSION PONDRA EL DEFAULT 5 X 5 Y 5 MINAS');
 	console.log('¿CUANTAS MINAS QUIERES?');
 	const quantity = scanf("%d");
 	console.log('¿ANCHO HORIZONTAL?');
@@ -27,6 +31,7 @@ async function begin(): Promise<boolean> {
 	const dataMina = new Minas(sizeX, sizeY, quantity);
 	let result: string;
 	do {
+		clear();
 		dataMina.createMap();
 		let coordX: number;
 		let coordY: number;

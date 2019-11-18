@@ -25,7 +25,6 @@ export class Minas {
 			this.mineQuantity = mineQuantity;
 		}
 		this.generateRandomMap();
-		console.log(this.whereMine);
 		this.markFinish = false;
 	}
 
@@ -130,7 +129,7 @@ export class Minas {
 	}
 
 	quantityAroundOfCell(x: number, y: number): string {
-		let result: number = 0;
+		let result: any = 0;
 		for (const mine of this.whereMine) {
 			if (
 				((mine[0] - 1) === y && (mine[1]) === x) ||
@@ -145,7 +144,9 @@ export class Minas {
 				result++;
 			}
 		}
-
+		if( result == 0){
+			result = ' ';
+		}
 		return result.toString();
 	}
 

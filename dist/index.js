@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const scanf = require("scanf");
 const figlet = require("figlet");
+const clear = require("clear");
 const minas_1 = require("./minas");
 const bootstrap = () => __awaiter(this, void 0, void 0, function* () {
     figlet('BUSCAMINAS', {
@@ -27,6 +28,10 @@ const bootstrap = () => __awaiter(this, void 0, void 0, function* () {
 });
 function begin() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log('INSTRUCCIONES');
+        console.log('1- MAXIMO DE MINAS NO DEBE SOBREPASAR AL MAXIMO DE ESPACIOS - 1');
+        console.log('2- MAXIMO DE ANCHO HORIZONTAL Y VERTICAL 49 (SE RECOMIENDA DE 30 X 3O MAXIMO)');
+        console.log('3- EN CASO DE ERRONEO EN DIMENSION PONDRA EL DEFAULT 5 X 5 Y 5 MINAS');
         console.log('¿CUANTAS MINAS QUIERES?');
         const quantity = scanf("%d");
         console.log('¿ANCHO HORIZONTAL?');
@@ -36,6 +41,7 @@ function begin() {
         const dataMina = new minas_1.Minas(sizeX, sizeY, quantity);
         let result;
         do {
+            clear();
             dataMina.createMap();
             let coordX;
             let coordY;
